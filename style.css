@@ -1,0 +1,396 @@
+/* Apple Dark Theme Inspiration */
+:root {
+    --bg-dark: #000000;
+    --card-dark: #1c1c1e;
+    --card-light: #f5f5f7;
+    --text-primary: #f5f5f7;
+    --text-secondary: #86868b;
+    --text-dark: #1d1d1f;
+    --link-color: #2997ff;
+    --accent-orange: #bf4800;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Global Nav */
+.global-nav {
+    background-color: rgba(29, 29, 31, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-content {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 22px;
+}
+
+.nav-content a {
+    color: #f5f5f7;
+    text-decoration: none;
+    font-size: 12px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-content a:hover {
+    opacity: 1;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 14px !important;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Header */
+.store-header {
+    padding: 120px 22px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.store-header h1 {
+    font-size: 48px;
+    line-height: 1.05;
+    font-weight: 600;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
+
+.store-header h1 span {
+    color: var(--text-primary);
+}
+
+.header-links {
+    margin-top: 20px;
+}
+
+.header-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.header-links a:hover {
+    text-decoration: underline;
+}
+
+/* Sections & Carousels */
+.carousel-section {
+    padding: 40px 0 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.section-header {
+    padding: 0 22px;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.section-header h2 span {
+    color: var(--text-primary);
+}
+
+.carousel-container {
+    position: relative;
+    padding: 0 22px;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Cards */
+.card {
+    min-width: 320px;
+    max-width: 400px;
+    min-height: 560px;
+    height: auto;
+    border-radius: 18px;
+    padding: 30px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+.dark-card {
+    background-color: var(--card-dark);
+}
+
+.light-card {
+    background-color: var(--card-light);
+    color: var(--text-dark);
+}
+
+.card-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-orange);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-desc {
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+.card-price {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+/* Card Visuals */
+.card-visual {
+    height: 140px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
+
+.visual-starter {
+    background: linear-gradient(135deg, #2c2c2e 0%, #1c1c1e 100%);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.visual-basic {
+    background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
+}
+
+.visual-pro {
+    background: linear-gradient(135deg, #4A00E0 0%, #8E2DE2 100%);
+}
+
+.visual-enterprise {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-enterprise::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+}
+
+/* Card Feature Lists */
+.card-features {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.card-features li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.card-features li i {
+    color: var(--text-primary);
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.card-links {
+    margin-top: auto;
+}
+
+/* Portfolio Specific Overrides */
+.portfolio-card {
+    padding: 0;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.portfolio-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.portfolio-content .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--text-primary);
+    color: var(--bg-dark);
+    padding: 12px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #d2d2d7;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebd5a;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.scroll-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.scroll-btn.left { left: 10px; }
+.scroll-btn.right { right: 10px; }
+
+/* Contact Specifics */
+.specialist-card {
+    height: auto;
+    min-height: 350px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-details {
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 2;
+    color: var(--text-secondary);
+}
+
+.contact-details i {
+    width: 20px;
+    color: var(--text-primary);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 30px 22px;
+    max-width: 980px;
+    margin: 40px auto 0;
+}
+
+.footer-content {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .store-header h1 { font-size: 32px; }
+    .section-header h2 { font-size: 24px; }
+    .scroll-btn { display: none; }
+}
